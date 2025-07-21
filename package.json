@@ -1,21 +1,32 @@
 {
   "name": "vscode-linux-kernel",
   "displayName": "vscode-linux-kernel",
-  "description": "",
+  "description": "内核源码阅读与模块开发插件",
   "version": "0.0.1",
+  "publisher": "dingjing",
+  "keywords": [
+    "vscode",
+    "linux",
+    "kernel",
+    "module",
+    "development"
+  ],
   "engines": {
     "vscode": "^1.54.0"
   },
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "workspaceContains:kernel/Makefile",
+    "onCommand:vscode-linux-kernel.start"
+  ],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "vscode-linux-kernel.helloWorld",
-        "title": "Hello World"
+        "command": "vscode-linux-kernel.start",
+        "title": "Start Linux Kernel Development"
       }
     ]
   },
@@ -31,17 +42,25 @@
     "test": "vscode-test"
   },
   "devDependencies": {
-    "@types/vscode": "^1.54.0",
     "@types/mocha": "^10.0.10",
     "@types/node": "20.x",
+    "@types/vscode": "^1.54.0",
     "@typescript-eslint/eslint-plugin": "^8.31.1",
     "@typescript-eslint/parser": "^8.31.1",
-    "eslint": "^9.25.1",
-    "typescript": "^5.8.3",
-    "ts-loader": "^9.5.2",
-    "webpack": "^5.99.7",
-    "webpack-cli": "^6.0.1",
     "@vscode/test-cli": "^0.0.11",
-    "@vscode/test-electron": "^2.5.2"
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^9.25.1",
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.8.3",
+    "webpack": "^5.99.7",
+    "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "vsce": "^2.15.0"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dingjingmaster/vscode-linux-kernel.git"
   }
 }

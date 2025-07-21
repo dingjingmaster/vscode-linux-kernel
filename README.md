@@ -1,5 +1,3 @@
 # vscode-linux-kernel 
 
-## 开发记录
-
-![docs/dev-notebook.md](docs/dev-notebook.md)
+> Linux 内核源码阅读与模块开发插件
